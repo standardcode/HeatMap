@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>Save</servlet-name>
+        <servlet-class>eu.standardcode.heatmap.record.Save</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Image</servlet-name>
+        <servlet-class>eu.standardcode.heatmap.visualize.Image</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>TrackingCode</servlet-name>
+        <jsp-file>/heatmap.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>Toolbar</servlet-name>
+        <jsp-file>/preview/toolbar.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Save</servlet-name>
+        <url-pattern>/save</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Image</servlet-name>
+        <url-pattern>/image</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TrackingCode</servlet-name>
+        <url-pattern>/heatmap.js</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Toolbar</servlet-name>
+        <url-pattern>/preview/toolbar.js</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

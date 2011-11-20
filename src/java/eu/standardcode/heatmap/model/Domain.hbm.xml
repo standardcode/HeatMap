@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 12, 2011 6:14:32 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="eu.standardcode.heatmap.model.Domain" table="domain" catalog="heatmap">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="domain" type="string">
+            <column name="domain" not-null="true" />
+        </property>
+        <property name="appear" type="long">
+            <column name="appear" not-null="true" />
+        </property>
+        <set name="urls" inverse="true">
+            <key>
+                <column name="domain_id" not-null="true" />
+            </key>
+            <one-to-many class="eu.standardcode.heatmap.model.Url" />
+        </set>
+    </class>
+</hibernate-mapping>

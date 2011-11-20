@@ -1,0 +1,57 @@
+Heatmap collects data about mouse events on web pages and visualize them.
+version 0.2.0
+Author: Łukasz Sutkowski
+http://standardcode.eu
+
+Introduction
+Using this software you can see where users click or move a mouse cursor on you web sites.
+You need at least one server instance, from where web sites get code and send data.
+The server gathers data and provides GUI to preview heat maps.
+
+Installation on server
+Create in MySQL database named `heatmap`.
+Import db/structure.sql file into the database.
+Download or build (see "Development" section) Heatmap.war.
+Deploy it on application server e.g. GlassFish.
+Change database access in WEB-INF/classes/hibernate.cfg.xml.
+Visit http://<<glassfish>>:<<port>>/heatmap/ to see if the application works.
+
+Installation on web site
+There is JavaScript template code that should be inserted into tracked web site:
+<script type="text/javascript">
+var _hm = _hm || {};
+_hm.align = 'center';
+_hm.contentWidth = function(){return $('body>header').width();}
+window.onload=function() {
+  var script = new Array('jquery','jquery.cookie','heatmap');
+  for(i in script) {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = 'http://<<glassfish>>:<<port>>/heatmap/' + script[i] + '.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  }
+}
+</script>
+You should change:
+_hm.align - depending where is the whole content located on web page: 'left', 'center', 'right'.
+_hm.contentWidth - should return width of the content mentioned above.
+Now mouse position will be calculated independent from window size
+Code 'jquery' and/or 'jquery.cookie' can be removed if the web page already use jquery/jquery.cookie accordingly.
+Change <<glassfish>>:<<port>> to the server address.
+
+Heat maps view
+Go to: http://<<glassfish>>:<<port>>/heatmap/preview/
+Type URL of web page where mouse events are tracked and change other options if needed.
+User ID is optional, if not chosen, data from all of them will be displayed.
+Press Enter or "Go".
+Check "Show heat map" if not checked.
+Data that fit to the options will be displayed on image covering the site.
+Use scroll below options to change the image opacity.
+
+Development
+Heatmap is written in Java 7 and developed Netbeans 7.1 beta.
+Database is designed in MySQL Workbench.
+Git as control system.
+To proper work of preview, the jQuery UI is needed - create jquery-ui directory and unpack files there.
+
+License
+GPL 3

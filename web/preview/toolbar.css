@@ -1,0 +1,25 @@
+root{display: block;}
+*{margin:0;padding:0;border:0;font:12px/22px sans-serif;}
+#page{position:absolute;top:101px;left:0;border-top:1px solid grey;}
+#cover{background-color:#000;position:absolute;top:100px;opacity:0.5;min-height:0;}
+
+#options{position: relative;background-color:#ddd;height: 100px;padding: 5px 10px;}
+#options>div{position: absolute;}
+#basic{width: 850px;height: 35px;}
+#visual{width: 160px;top:5px;left:830px;}
+#timeSelect{width: 850px;top:30px;left:10px;}
+#other{top:5px;left:990px;}
+input,option,select{border:1px solid #bbb;padding:2px 4px;}
+input[type=submit]:hover{background-color: #ddd;}
+fieldset{float: left;border: 1px solid #bbb;border-left: none;padding: 5px;}
+fieldset:hover{background-color: #bbb;}
+fieldset:first-child{border-left: 1px solid #bbb;}
+legend{margin-left: 10px;padding: 0 5px;}
+#basic label{margin-right: 5px;}
+.time{width:85px;}
+.number{width:95px;}
+#opacity{position: absolute;top:90px;width: 100%;}
+
+#visual label{float: left;clear: both;width:50px;}
+#visual select{width:100px;}
+#about{float: right;}

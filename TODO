@@ -1,0 +1,24 @@
+Things which are planed to implement.
+
+1. Preview
+Mouse cursor actions replay.
+Draw rectangle to preview.
+Thumbnail browse.
+Canvas drawing.
+Legend.
+Tracking selected user across URLs.
+Numerical statistics.
+
+2. Saving
+Survey time differences between browsers.
+Compress data before sent.
+Invoking change of URL from JavaScript (e.g. AJAX reloading).
+Saving additional information about visit.
+
+3. Installation
+Wizard generating code to paste on web page.
+
+4. Development
+Performance measurement of saving and drawing.
+Javadoc.
+User documentation.
