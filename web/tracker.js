@@ -21,7 +21,7 @@ function updateShift() {
         default:
             shift = 0;
     }
-    if(top != window) {
+    if(top !== window) {
         previewUpdate();
     }
 }
@@ -95,7 +95,7 @@ function track() {
 
 $(document).ready(function(){
     updateShift();
-    if(top == window) {//track
+    if(top === window) {//track
         track();
     } else {//preview
         previewUpdate();

@@ -48,10 +48,10 @@ Data that fit to the options will be displayed on image covering the site.
 Use scroll below options to change the image opacity.
 
 Development
-Heatmap is written in Java 7 and developed Netbeans 7.1 beta.
+Heatmap is written in Java 7 and developed in Netbeans 7.4 RC2.
 Database is designed in MySQL Workbench.
 Git as control system.
-To proper work of preview, the jQuery UI is needed - create jquery-ui directory and unpack files there.
+To proper work of preview, the jQuery UI is needed - unpack jquery-ui-*.zip to web/ directory.
 
 License
 GPL 3

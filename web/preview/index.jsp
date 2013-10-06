@@ -17,7 +17,7 @@
                 out.println("Cannot find jQuery directory");
                 return path;
             }
-            files = new FindFilePattern(startingDir, patter).getFiles(3);
+            files = new FindFilePattern(startingDir, patter).getFiles(5);
             if (files.isEmpty()) {
                 out.println(error);
             } else {
@@ -34,15 +34,15 @@
 %>
 <%
     ServletContext sc = getServletConfig().getServletContext();
-    Path path = new File(sc.getRealPath("jquery-ui/")).toPath();
-    String jQueryUiCss = getPath(path, "jquery-ui*.css", out, "Cannot find jQuery UI CSS file.");
-    String jQueryUiJs = getPath(path, "jquery-ui*.js", out, "Cannot find jQuery UI JavaScript file.");
+    Path path = new File(sc.getRealPath("")).toPath();
+    String jQueryUiCss = getPath(path, "jquery-ui.min.css", out, "Cannot find jQuery UI CSS file.");
+    String jQueryUiJs = getPath(path, "jquery-ui.min.js", out, "Cannot find jQuery UI JavaScript file.");
     if (jQueryUiCss.isEmpty() || jQueryUiJs.isEmpty()) {
         return;
     }
     URI uri = new File("").toURI();
-    jQueryUiCss = "../jquery-ui/" + relativie(uri, jQueryUiCss);
-    jQueryUiJs = "../jquery-ui/" + relativie(uri, jQueryUiJs);
+    jQueryUiCss = "../" + relativie(uri, jQueryUiCss);
+    jQueryUiJs = "../" + relativie(uri, jQueryUiJs);
 %>
 <!DOCTYPE html>
 <html>

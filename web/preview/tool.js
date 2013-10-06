@@ -4,8 +4,11 @@ function resize() {
 }
 
 function submit() {
-    window.page.location = $('#url').val();
-    updateHeatmap();
+    var url = $('#url').val();
+    if (url) {
+        window.page.location = url;
+        updateHeatmap();
+    }
     return false;
 }
 
@@ -72,14 +75,14 @@ function getTimeScope() {
         case "dateRange":
             var from = $('#from').datepicker('getDate');
             var to = $('#to').datepicker('getDate');    
-            if(from != null && to != null) {
+            if(from && to) {
                 time = '&from=' + from.getTime() + '&to=' + (to.getTime() + 24 * 3600000);
             }
             break;
         case "pointTime":
             var point = $('#point').datepicker('getDate');
             var radius = $('#radius').val();
-            if(point != null && (radius = parseInt(radius))>0) {
+            if(point && (radius = parseInt(radius))>0) {
                 time = '&point=' + point.getTime() + '&radius=' + radius;
             }
             break;
